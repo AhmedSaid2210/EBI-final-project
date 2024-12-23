@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('/img/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+/* Add a dark overlay on top of the background image */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Ensure the content appears above the dark overlay */
+.login-container {
+    position: relative;
+    z-index: 2;
+    width: 380px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(9px);
+    color: white;
+    border-radius: 14px;
+    padding: 30px 40px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards ease-in-out;
+    transform: translateY(-30px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading styles */
+.login-container h1 {
+    font-size: 39px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards ease-in-out 0.3s;
+}
+
+/* Social icons styles */
+.social-icons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.social-icons .icon {
+    display: inline-block;
+    font-size: 20px;
+    color: white;
+    margin: 0 10px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 16px;
+    padding: 7px 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons .icon:hover {
+    color: #c2c2c2;
+}
+
+/* Form message animation */
+.form-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeInUp 1s forwards ease-in-out 0.6s;
+}
+
+/* Input and button animations */
+input,
+button {
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 60px;
+    font-size: 15px;
+    color: white;
+    text-indent: 15px;
+    opacity: 0;
+    animation: fadeInUp 1.2s forwards ease-in-out 0.9s;
+    transition: 0.3s ease-in-out;
+}
+
+input::placeholder {
+    color: white;
+    text-indent: 15px;
+}
+
+input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+button {
+    background-color: #02a152;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Anchor tag styles */
+a {
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+    transition: 0.4s ease-in-out;
+    opacity: 0;
+    animation: fadeInUp 1.4s forwards ease-in-out 1.1s;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
